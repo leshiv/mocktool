@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop>
+	<aspects>
+		<aspect
+			pointcut="java.lang.String com.example.bank.common.sign.SignService+.getSignature"
+			adviceClass="com.leshiv.mocktool.extension.common.advice.FixedReturnValueAdvice">
+			<params>
+				<param name="type" value="string"></param>
+				<param name="value" value="12345"></param>
+				<param name="isProceed" value="false"></param>
+			</params>
+		</aspect>
+	</aspects>
+
+	<whitelist>
+		<ignore package="org.springframework" />
+		<ignore package="com.alibaba.dubbo" />
+	</whitelist>
+</aop>
